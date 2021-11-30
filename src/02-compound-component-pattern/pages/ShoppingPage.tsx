@@ -35,7 +35,6 @@ export const ShoppingPage = () => {
           <ProductTitle className="text-white" />
           <ProductButtons className="text-white" />
         </ProductCard>
-
       </div>
     </div>
   );
