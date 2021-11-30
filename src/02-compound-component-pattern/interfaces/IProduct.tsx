@@ -4,6 +4,7 @@ export interface Props {
   product: Product;
   children: ReactElement | ReactElement[];
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export interface Product {

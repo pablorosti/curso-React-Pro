@@ -10,12 +10,15 @@ export const ProductCard: React.FC<Props> = ({
   children,
   product,
   className,
+  style,
 }) => {
   const { counter, handleCounterclick } = useProduct();
 
   return (
     <Provider value={{ counter, handleCounterclick, product }}>
-      <div className={`productCard ${className}`}>{children}</div>
+      <div className={`productCard ${className}`} style={style}>
+        {children}
+      </div>
     </Provider>
   );
 };
