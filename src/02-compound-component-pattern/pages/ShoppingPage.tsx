@@ -1,8 +1,11 @@
 import React from "react";
-import { ProductCard } from '../components/ProductCard';
-import { ProductImage } from '../components/ProductImage';
-import { ProductTitle } from '../components/ProductTitle';
-import { ProductButtons } from '../components/ProductButtons';
+import {
+  ProductCard,
+  ProductImage,
+  ProductTitle,
+  ProductButtons,
+} from "../components/index";
+import "../styles/custom-styles.css";
 
 const product = {
   id: "1",
@@ -22,9 +25,15 @@ export const ShoppingPage = () => {
         }}
       >
         <ProductCard product={product}>
-          <ProductImage  />
+          <ProductImage />
           <ProductTitle />
           <ProductButtons />
+        </ProductCard>
+
+        <ProductCard product={product} className="bg-dark">
+          <ProductImage />
+          <ProductTitle className="text-white" />
+          <ProductButtons className="text-white" />
         </ProductCard>
       </div>
     </div>

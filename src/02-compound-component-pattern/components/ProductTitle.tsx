@@ -1,7 +1,13 @@
 import { useContext } from "react";
 import { ProductContext } from "./ProductCard";
 
-export const ProductTitle = () => {
+interface Styles {
+  className?: string;
+}
+
+export const ProductTitle: React.FC<Styles> = ({ className }) => {
   const { product } = useContext(ProductContext);
-  return <span className="productDescription">{product.title}</span>;
+  return (
+    <span className={`productDescription ${className}`}>{product.title}</span>
+  );
 };

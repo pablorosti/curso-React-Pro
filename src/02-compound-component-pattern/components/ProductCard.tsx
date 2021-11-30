@@ -6,12 +6,16 @@ import { ProductContextProps, Props } from "../interfaces/IProduct";
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 
-export const ProductCard: React.FC<Props> = ({ children, product }) => {
+export const ProductCard: React.FC<Props> = ({
+  children,
+  product,
+  className,
+}) => {
   const { counter, handleCounterclick } = useProduct();
 
   return (
     <Provider value={{ counter, handleCounterclick, product }}>
-      <div className="productCard">{children}</div>;
+      <div className={`productCard ${className}`}>{children}</div>
     </Provider>
   );
 };
