@@ -19,7 +19,12 @@ export const ShoppingPage = () => {
       <h1>Shopping</h1>
       <hr />
       <div>
-        <ProductCard product={product} className="bg-dark" key={product.id}>
+        <ProductCard
+          product={product}
+          className="bg-dark"
+          key={product.id}
+          initialValues={{ count: 5, maxCount: 10 }}
+        >
           <ProductImage />
           <ProductTitle className="text-white" />
           <ProductButtons className="text-white" />

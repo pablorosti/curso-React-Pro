@@ -11,8 +11,9 @@ export const ProductCard: React.FC<Props> = ({
   product,
   className,
   style,
+  initialValues,
 }) => {
-  const { counter, handleCounterclick } = useProduct();
+  const { counter, handleCounterclick } = useProduct(initialValues);
 
   return (
     <Provider value={{ counter, handleCounterclick, product }}>

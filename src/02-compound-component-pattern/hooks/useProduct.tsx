@@ -1,9 +1,15 @@
 import { useState } from "react";
+import { InitialValues } from "../interfaces/IProduct";
 
-export const useProduct = () => {
-  const [counter, setCounter] = useState(0);
+export const useProduct = (initialValues?: InitialValues) => {
+  const [counter, setCounter] = useState<number>(initialValues?.count || 0);
+
   const handleCounterclick = (value: number) => {
-    setCounter((prev) => Math.max(prev + value, 0));
+    let newValue = Math.max(counter + value, 0);
+    if (initialValues?.maxCount) {
+      newValue = Math.min(newValue, initialValues.maxCount);
+    }
+    setCounter(newValue);
   };
   return { counter, handleCounterclick };
 };
