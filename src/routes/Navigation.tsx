@@ -2,26 +2,33 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
-} from 'react-router-dom';
+  NavLink,
+} from "react-router-dom";
+import RegisterPage from "../03-forms/components/RegisterPage";
 
-import logo from '../logo.svg';
+import logo from "../logo.svg";
 
 export const Navigation = () => {
   return (
     <Router>
       <div className="main-layout">
         <nav>
-            <img src={ logo } alt="React Logo" />
+          <img src={logo} alt="React Logo" />
           <ul>
             <li>
-              <NavLink to="/" activeClassName="nav-active" exact>Home</NavLink>
+              <NavLink to="/registerPage" activeClassName="nav-active" exact>
+                Register Page
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName="nav-active" exact>About</NavLink>
+              <NavLink to="/about" activeClassName="nav-active" exact>
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/users" activeClassName="nav-active" exact>Users</NavLink>
+              <NavLink to="/users" activeClassName="nav-active" exact>
+                Users
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -35,11 +42,11 @@ export const Navigation = () => {
           <Route path="/users">
             <h1>Users</h1>
           </Route>
-          <Route path="/">
-            <h1>Home</h1>
+          <Route path="/registerPage">
+            <RegisterPage />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
+};
